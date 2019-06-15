@@ -18,5 +18,10 @@ server.use = ('./api/projects', ProjectsRouter);
 server.use = ('/.api/actions', ActionsRouter);
 
 
+// SANITY CHECK endpoint
+server.get('/', (req,res)=> {
+    res.send(`<h3> API Persistence SPRINT !!! `)
+})
+
 // DON'T FORGET THIS !!!
 module.exports = server;
