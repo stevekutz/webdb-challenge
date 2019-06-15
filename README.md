@@ -33,9 +33,21 @@ This will be akin to the Web API that you built in the last sprint, only this ti
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. Explain the difference between `RDBMS` and `SQL`.
+
+A RDBMS(Relational Database Management System) is the commonly used DBMS(Database Management System) that is based on  precise relationships establish between tables. The tables should be normalized to 3NF so that the database schema can be extended as needed without major overhaul.  A record in the table is a single row and often has several columns of data. 
+SQL(Structured Query Language) is a syntax for manipulating data from the table. For example, a SELECT command can be used to extract a specific query(e.g. A question about stored data such as provide all customers by name that placed ordered between specific dates). There are several categories of types of SQL commands such as DDL, DML, DQL, DCL, & Transaction Control Commands. Different RDBMS's use slight variations on SQL syntax, so one must make take care in setting implementing commands.
+
 1. Why do tables need a `primary key`?
+
+ A primary key is a way to uniquely identify a record(e.g.  row)  in a table. This prevents duplicate entries and allows a way to connect to other tables via foreign keys and joins.
+
 1. What is the name given to a table column that references the primary key on another table.
+
+Foreign key. Records in the PK should not be unique(or else this creates a one to one relationship).
+
 1. What do we need in order to have a _many to many_ relationship between two tables.
+
+A Junction Table(sometimes called by other names) is needed. It is a like merging 2 one-to-many relationships where the many sides relationship are bridged using the junction table. The junction table contains the foreign keys that correspond to the primary keys on the one side of the relationships. JOINS can now be implemented on the tables(hopefully in 3NF form) to manipulate data.
 
 ## Project Set Up
 
