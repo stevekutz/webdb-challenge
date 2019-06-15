@@ -75,7 +75,28 @@ router.put('/:id', async(req, res) => {
 
 });
 
+// 
+// DELETE  work in progress
+router.delete('/:id', async(req, res) => {
+    const {id} = req.params;
 
+    try {
+        const totalActions = await Actions.deleteAction(id);
+     //   const project = await Actions.getAction(id);
+
+        console.log(totalActions);
+
+        if(totalActions) {
+            res.status(200).json({message: ` the action with id ${id} has been deleted`});
+        } else {
+            req.status(404).json({message: `The action with ${id} does not exist`});
+
+       }
+    } catch (error) {
+        res.status(500).json({ message: "The action has a Server Error", error: error });
+    }
+
+})
 
 
 module.exports = router;

@@ -7,6 +7,7 @@ module.exports = {
     addAction,
     getAction,
     updateAction,
+    deleteAction
 };
 
 function getActions() {
@@ -38,4 +39,11 @@ async function updateAction(id, actionChanges) {
     return db('projects')
         .where({id})
         .update(actionChanges);
+}
+
+async function deleteAction(id) {
+    return db('projects')
+        .where({id})
+        .del();
+
 }
