@@ -1,5 +1,5 @@
 const express = require('express');
-const helmet = requrie('helment');
+const helmet = require('helmet');
 
 // placeholder for routers
 const ProjectsRouter = require('./projects/projects-router');
@@ -20,7 +20,7 @@ server.use = ('/.api/actions', ActionsRouter);
 
 // SANITY CHECK endpoint
 server.get('/', (req,res)=> {
-    res.send(`<h3> API Persistence SPRINT !!! `)
+    res.send(`<h3> API Persistence SPRINT , whoooooo!!! </h3>`)
 })
 
 // DON'T FORGET THIS !!!
