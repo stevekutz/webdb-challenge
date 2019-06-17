@@ -12,12 +12,18 @@ module.exports = {
 
 function getProjects() {
   //  return db('projects');   // the whole table
- 
+  //  !!! UNLIKE SQL, knex  allows methods in any order !!! 
    return db
+   /*
         .select('projects.name')
         .from('projects')
         .orderBy('projects.name');   // ordering is affected by upper/lowercase !!!!
-
+    */
+    
+    .from('projects')
+    .orderBy('projects.name')
+    .select('projects.name');
+    
 }
 
 function addProject(project) {

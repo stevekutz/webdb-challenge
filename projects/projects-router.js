@@ -2,9 +2,12 @@ const express = require('express');
 const Projects  = require('./projects-model.js');
 const router = express.Router();
 
+
+
 // GET all projects
 router.get('/', async (req, res) => {
     try {
+        console.log("Using ASYNC AWAIT using ROUTER")
         const projects = await Projects.getProjects();
         res.status(200).json(projects);
     } catch (error) {
