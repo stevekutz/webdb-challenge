@@ -40,7 +40,7 @@ async function updateAction(id, actionChanges) {
         .where({id})
         .update(actionChanges);
 }
-
+// work in progress
 async function deleteAction(id) {
     return db('projects')
         .where({id})
